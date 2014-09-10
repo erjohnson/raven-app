@@ -12,7 +12,7 @@ class TicketsController < ApplicationController
     @ticket = Ticket.new(ticket_params)
     if @ticket.save
       respond_to do |format|
-        format.html { redirect_to tickets_url }
+        format.html { redirect_to ticket_path(ticket) }
         format.js
       end
     end
@@ -38,7 +38,7 @@ class TicketsController < ApplicationController
 private
 
   def ticket_params
-    params.require(:ticket).permit(:question, :lesson_id).merge(user_id: current_user.id)
+    params.require(:ticket).permit(:question).merge(user_id: current_user.id)
   end
 
 end
