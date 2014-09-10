@@ -12,7 +12,7 @@ class TicketsController < ApplicationController
     @ticket = Ticket.new(ticket_params)
     if @ticket.save
       respond_to do |format|
-        format.html { redirect_to ticket_path(ticket) }
+        format.html { redirect_to tickets_path }
         format.js
       end
     end

@@ -1,9 +1,14 @@
+<script type="text/javascript">
+$('#raven').append('<%= image_tag "raven.png", class: "raven" %>');
+$('#raven').addClass('animated bounceInDown');
+</script>
 <%= form_for @ticket, html: {class: "form"}, remote: true do |f| %>
+<h2>Ask a question</h2>
   <%= render 'layouts/errors', :object => @ticket %>
 
   <div class="form-group">
     <%= f.text_field :question, class: "form-control" %>
   </div>
 
-  <%= f.submit "Submit", class: "btn btn-success" %>
+  <%= f.submit "Dispatch Raven!", class: "btn btn-lg btn-primary" %>
 <% end %>

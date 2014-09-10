@@ -1,4 +1,12 @@
-<%= link_to "New Ticket", new_ticket_path, id: "new_ticket_link", class: "btn btn-lg btn-primary", remote: true %>
+<div id="raven" class="text-center">
+
+</div>
+<div class="text-center">
+  <br>
+  <%= link_to "New Ticket", new_ticket_path, id: "new_ticket_link", class: "btn btn-lg btn-primary", remote: true %>
+</div>
+<br>
+<br>
 <div id="tickets_list">
   <%= render @tickets %>
 </div>
