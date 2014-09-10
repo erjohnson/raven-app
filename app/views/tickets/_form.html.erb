@@ -1,0 +1,9 @@
+<%= form_for @ticket, html: {class: "form"}, remote: true do |f| %>
+  <%= render 'layouts/errors', :object => @ticket %>
+
+  <div class="form-group">
+    <%= f.text_field :question, class: "form-control" %>
+  </div>
+
+  <%= f.submit "Submit", class: "btn btn-success" %>
+<% end %>
