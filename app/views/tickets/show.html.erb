@@ -7,9 +7,9 @@
 <% end %>
 <br>
 <br>
-<p>Asked at <%= @ticket.created_at.strftime('%I:%M:%S %p') %></p>
+<p>Asked at <%= @ticket.created_at.getlocal.strftime('%I:%M:%S %p') %></p>
 <% if @ticket.taken_at %>
-<p>Taken at <%= @ticket.taken_at.strftime('%I:%M:%S %p') %></p>
+<p>Taken at <%= @ticket.taken_at.getlocal.strftime('%I:%M:%S %p') %></p>
 <% end %>
-<p><%= link_to "#{@ticket.lesson.name} (#{@ticket.lesson.section})", lesson_path(@ticket.lesson) %></p>
-<p><span class="glyphicon glyphicon-user"></span> &nbsp;<%= @ticket.user.name %></p>
+<p><a href="<%= lesson_path(@ticket.lesson) %>"><span class="glyphicon glyphicon-list"></span> &nbsp;<%= @ticket.lesson.name %> (<%= @ticket.lesson.section %>)</a></p>
+<p><a href="<%= user_path(@ticket.user) %>"><span class="glyphicon glyphicon-user"></span> &nbsp;<%= @ticket.user.name %></a></p>
