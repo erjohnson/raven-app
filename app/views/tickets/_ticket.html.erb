@@ -1,6 +1,6 @@
 <div class="panel panel-default">
   <div class="panel-body">
-    <p><%= ticket.question %></p>
+    <p><%= link_to "#{ticket.question}", ticket_url(ticket) %></p>
     <p><%= ticket.user.name %></p>
   </div>
 </div>
