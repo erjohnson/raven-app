@@ -1,15 +1,37 @@
 <blockquote><%= @ticket.question %></blockquote>
 <br>
+<p><a href="<%= lesson_path(@ticket.lesson) %>"><span class="glyphicon glyphicon-list"></span> &nbsp;<%= @ticket.lesson.name %> (<%= @ticket.lesson.section %>)</a></p>
+<p><a href="<%= user_path(@ticket.user) %>"><span class="glyphicon glyphicon-user"></span> &nbsp;<%= @ticket.user.name %></a></p>
+<br>
 <%= form_for @ticket, action: "update", remote: true do |f| %>
   <%= f.hidden_field :taken, :value => true %>
   <%= f.hidden_field :taken_at, :value => Time.new() %>
-  <%= f.submit "Take Ticket", class: "btn btn-lg btn-primary" %>
+  <%= f.submit "Accept", class: "btn btn-lg btn-primary" %>
 <% end %>
-<br>
-<br>
-<p>Asked at <%= @ticket.created_at.getlocal.strftime('%I:%M:%S %p') %></p>
-<% if @ticket.taken_at %>
-<p>Taken at <%= @ticket.taken_at.getlocal.strftime('%I:%M:%S %p') %></p>
+<%= form_for @ticket, action: "update", remote: true do |f| %>
+  <%= f.hidden_field :done, :value => true %>
+  <%= f.hidden_field :done_at, :value => Time.new() %>
+  <%= f.submit "Done", class: "btn btn-lg btn-default" %>
 <% end %>
-<p><a href="<%= lesson_path(@ticket.lesson) %>"><span class="glyphicon glyphicon-list"></span> &nbsp;<%= @ticket.lesson.name %> (<%= @ticket.lesson.section %>)</a></p>
-<p><a href="<%= user_path(@ticket.user) %>"><span class="glyphicon glyphicon-user"></span> &nbsp;<%= @ticket.user.name %></a></p>
+
+
+<hr>
+<div class="row text-center">
+  <div class="col-md-4">
+    <p>asked @</p>
+    <p><%= @ticket.created_at.getlocal.strftime('%I:%M:%S %p') %></p>
+  </div>
+  <div class="col-md-4">
+    <p>taken @</p>
+    <% if @ticket.taken_at %>
+    <p><%= @ticket.taken_at.getlocal.strftime('%I:%M:%S %p') %></p>
+    <% end %>
+  </div>
+  <div class="col-md-4">
+    <p>answered @</p>
+    <% if @ticket.done_at %>
+    <p><%= @ticket.done_at.getlocal.strftime('%I:%M:%S %p') %></p>
+    <% end %>
+  </div>
+</div>
+<hr>
