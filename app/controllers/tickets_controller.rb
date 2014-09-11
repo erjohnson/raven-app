@@ -30,7 +30,7 @@ class TicketsController < ApplicationController
     @ticket = Ticket.find(params[:id])
     @ticket.update(params[:ticket])
     respond_to do |format|
-      format.html { redirect_to tickets_url }
+      format.html { redirect_to ticket_path(@ticket) }
       format.js
     end
   end

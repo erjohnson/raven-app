@@ -1,6 +1,6 @@
 <blockquote><%= @ticket.question %></blockquote>
 <br>
-<%= form_for @ticket, remote: true do |f| %>
+<%= form_for @ticket, action: "update", remote: true do |f| %>
   <%= f.hidden_field :taken, :value => true %>
   <%= f.hidden_field :taken_at, :value => Time.now() %>
   <%= f.submit "Take Ticket", class: "btn btn-lg btn-primary" %>
@@ -8,6 +8,8 @@
 <br>
 <br>
 <p>Asked at <%= @ticket.created_at.strftime('%I:%M:%S %p') %></p>
+<% if @ticket.taken_at %>
 <p>Taken at <%= @ticket.taken_at.strftime('%I:%M:%S %p') %></p>
+<% end %>
 <p><%= link_to "#{@ticket.lesson.name} (#{@ticket.lesson.section})", lesson_path(@ticket.lesson) %></p>
 <p><span class="glyphicon glyphicon-user"></span> &nbsp;<%= @ticket.user.name %></p>

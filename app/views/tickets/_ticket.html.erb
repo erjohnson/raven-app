@@ -1,6 +1,8 @@
 <div class="panel panel-default">
   <div class="panel-body">
-    <p><%= link_to "#{ticket.question}", ticket_url(ticket) %></p>
-    <p><%= ticket.user.name %></p>
+    <%= link_to "#{ticket.question}", ticket_url(ticket) %>
+  </div>
+  <div class="panel-footer">
+    asked by <strong><%= ticket.user.name %></strong> at <%= ticket.created_at.getlocal.strftime('%I:%M:%S %p') %>
   </div>
 </div>
