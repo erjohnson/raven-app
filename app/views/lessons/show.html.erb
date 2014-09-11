@@ -1,3 +1,4 @@
 <h2><%= @lesson.name %></h2>
-<p><%= @lesson.url %></h2>
+<p><%= link_to "View Lesson", @lesson.url %></p>
 <p><%= @lesson.section %></p>
+<p>Tickets created: <%= @lesson.tickets.count %></p>
