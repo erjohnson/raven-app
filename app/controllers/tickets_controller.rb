@@ -28,9 +28,9 @@ class TicketsController < ApplicationController
 
   def update
     @ticket = Ticket.find(params[:id])
-    @ticket.update(params[:ticket])
+    @ticket.update(ticket_params)
     respond_to do |format|
-      format.html { redirect_to ticket_path(@ticket) }
+      format.html { redirect_to @ticket }
       format.js
     end
   end

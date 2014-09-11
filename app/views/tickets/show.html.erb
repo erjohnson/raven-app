@@ -2,7 +2,7 @@
 <br>
 <%= form_for @ticket, action: "update", remote: true do |f| %>
   <%= f.hidden_field :taken, :value => true %>
-  <%= f.hidden_field :taken_at, :value => Time.now() %>
+  <%= f.hidden_field :taken_at, :value => Time.new() %>
   <%= f.submit "Take Ticket", class: "btn btn-lg btn-primary" %>
 <% end %>
 <br>
