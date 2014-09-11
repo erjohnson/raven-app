@@ -1,0 +1,9 @@
+<div class="text-center">
+  <br>
+  <%= link_to "New Lesson", new_lesson_path, id: "new_lesson_link", class: "btn btn-lg btn-primary", remote: true %>
+</div>
+<br>
+<br>
+<div id="lessons_list">
+  <%= render @lessons %>
+</div>
