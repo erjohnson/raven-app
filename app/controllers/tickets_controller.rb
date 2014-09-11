@@ -38,7 +38,7 @@ class TicketsController < ApplicationController
 private
 
   def ticket_params
-    params.require(:ticket).permit(:question, :lesson_id).merge(user_id: current_user.id)
+    params.require(:ticket).permit(:question, :lesson_id, :taken, :taken_at, :done, :done_at).merge(user_id: current_user.id)
   end
 
 end
