@@ -8,6 +8,7 @@ $('#raven').addClass('animated bounceInDown');
 
   <div class="form-group">
     <%= f.text_field :question, class: "form-control" %>
+    <%= f.hidden_field :user_id, :value => current_user.id %>
   </div>
 
   <%= f.submit "Dispatch Raven!", class: "btn btn-lg btn-primary" %>
