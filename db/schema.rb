@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140911165336) do
+ActiveRecord::Schema.define(version: 20140911174149) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20140911165336) do
     t.string   "section"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "url"
   end
 
   create_table "tickets", force: true do |t|
@@ -29,8 +30,8 @@ ActiveRecord::Schema.define(version: 20140911165336) do
     t.integer  "lesson_id"
     t.boolean  "taken"
     t.boolean  "done"
-    t.datetime "taken_at"
-    t.datetime "done_at"
+    t.time     "taken_at"
+    t.time     "done_at"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
