@@ -5,6 +5,10 @@ $('#raven').addClass('animated bounceInDown');
 <%= form_for @ticket, html: {class: "form"}, remote: true do |f| %>
 <h2>Ask a question</h2>
   <%= render 'layouts/errors', :object => @ticket %>
+  <div class="form-group">
+    <%= f.label :lessons %>
+    <%= f.collection_select(:lesson_id, Lesson.all, :id, :name, multiple: true) %>
+  </div>
 
   <div class="form-group">
     <%= f.text_field :question, class: "form-control" %>

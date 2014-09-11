@@ -1,3 +1,5 @@
-<h2><%= @ticket.question %></h2>
+<blockquote><%= @ticket.question %></blockquote>
+<p><%= @ticket.lesson.name %></p>
+<p><%= @ticket.lesson.section %></p>
 <p><%= @ticket.created_at.strftime('%I:%M:%S %p') %></p>
 <p><%= @ticket.user.name %></p>
