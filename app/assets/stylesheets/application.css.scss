@@ -35,6 +35,10 @@ $navbar-default-link-color: #FFFFFF;
 $navbar-default-link-hover-color: #DDDDDD;
 $navbar-border-radius: 0;
 $btn-primary-bg: #3A6073;
+$thumbnail-border: none;
+$navbar-default-toggle-icon-bar-bg: #FFFFFF;
+$navbar-default-toggle-hover-bg: none;
+$navbar-default-toggle-border-color: none;
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
@@ -63,6 +67,11 @@ $btn-primary-bg: #3A6073;
 
 .media-body {
   vertical-align: middle;
+}
+
+.profile-avatar {
+  vertical-align: middle;
+  border-radius: 50%;
 }
 
 .animated {

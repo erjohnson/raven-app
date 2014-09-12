@@ -1,5 +1,5 @@
 <div class="media">
-  <a class="pull-left" href="#">
+  <a class="pull-left" href="<%= user_url(ticket.user) %>">
     <%= image_tag ticket.user.avatar.url(:thumb), class: "media-object", alt: "#{ticket.user.name} avatar" %>
   </a>
   <div class="media-body">
