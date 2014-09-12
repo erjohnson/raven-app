@@ -12,6 +12,8 @@ gem 'autoprefixer-rails'
 gem 'bootstrap-sass'
 gem 'devise'
 gem 'textacular', '~> 3.0'
+gem 'paperclip', :git => 'git://github.com/thoughtbot/paperclip.git'
+gem 'remotipart', '~> 1.2'
 
 group :development do
   gem 'better_errors'
