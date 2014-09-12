@@ -1,5 +1,7 @@
 <h2><%= @user.name %></h2>
 
+<%= link_to "Update Profile" %>
+
 <p>Tickets created: <%= @user.tickets.count %></p>
 <br>
 <%= render @user.tickets %>
