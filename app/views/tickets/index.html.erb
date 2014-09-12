@@ -1,5 +1,10 @@
 <div class="row">
-  <div class="col-sm-6 col-md-6 col-sm-offset-3 col-md-offset-3">
+  <div class="col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
+    <div class="text-center">
+      <br>
+        <%= link_to "Ask For Help", new_ticket_path, class: "btn btn-lg btn-primary", remote: true %>
+    </div>
+    <hr>
     <div class="dropdown">
       <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
         show
@@ -10,15 +15,9 @@
         <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Closed Tickets</a></li>
       </ul>
     </div>
-    <div class="text-center">
-      <div id="raven" class="text-center">
-      </div>
-      <br>
-        <%= link_to "Ask For Help", new_ticket_path, id: "new_ticket_link", class: "btn btn-lg btn-primary", remote: true %>
-    </div>
-    <hr>
     <div id="tickets_list">
       <%= render @tickets %>
     </div>
   </div>
 </div>
+<div id="ticket-modal" class="modal fade"></div>
