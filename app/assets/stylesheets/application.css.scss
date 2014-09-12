@@ -43,6 +43,10 @@ $navbar-default-toggle-border-color: none;
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+a:hover {
+  text-decoration: none;
+}
+
 .navbar-default {
   @include nav-bg;
 }

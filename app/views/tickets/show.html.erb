@@ -1,38 +1,31 @@
-<blockquote><%= @ticket.question %></blockquote>
-<br>
-<p><a href="<%= lesson_path(@ticket.lesson) %>"><span class="glyphicon glyphicon-list"></span> &nbsp;<%= @ticket.lesson.name %> (<%= @ticket.lesson.section %>)</a></p>
-<p><a href="<%= user_path(@ticket.user) %>"><span class="glyphicon glyphicon-user"></span> &nbsp;<%= @ticket.user.name %></a></p>
-
-<br>
-<%= form_for @ticket, action: "update", remote: true do |f| %>
-  <%= f.hidden_field :taken, :value => true %>
-  <%= f.hidden_field :taken_at, :value => Time.new() %>
-  <%= f.submit "Accept", class: "btn btn-lg btn-primary" %>
-<% end %>
-<%= form_for @ticket, action: "update", remote: true do |f| %>
-  <%= f.hidden_field :done, :value => true %>
-  <%= f.hidden_field :done_at, :value => Time.new() %>
-  <%= f.submit "Done", class: "btn btn-lg btn-default" %>
-<% end %>
-
-
-<hr>
-<div class="row text-center">
-  <div class="col-md-4">
-    <p>asked @</p>
-    <p><%= @ticket.created_at.getlocal.strftime('%I:%M:%S %p') %></p>
-  </div>
-  <div class="col-md-4">
-    <p>taken @</p>
+<div class="row">
+  <div class="col-sm-8 col-md-8 col-sm-offset-3 col-md-offset-3">
+        <h4>
+          <%= link_to user_path(@ticket.user) do %>
+            <%= image_tag @ticket.user.avatar.url(:thumb), class: "profile-avatar", alt: "#{@ticket.user.name} avatar" %> &nbsp;&nbsp;<%= @ticket.user.name %>
+          <% end %> asks
+        </h4>
+        <br>
+        <blockquote>
+          <%= @ticket.question %>
+          <br>
+          <br>
+            <%= link_to lesson_path(@ticket.lesson) do %>
+              <span class="glyphicon glyphicon-list"></span> &nbsp;<%= @ticket.lesson.name %> (<%= @ticket.lesson.section %>)
+            <% end %>
+        </blockquote>
+    <%= @ticket.created_at.getlocal.strftime('%I:%M:%S %p') %>
+    <br>
     <% if @ticket.taken_at %>
-    <p><%= @ticket.taken_at.getlocal.strftime('%I:%M:%S %p') %></p>
+      <%= @ticket.taken_at.getlocal.strftime('%I:%M:%S %p') %>
     <% end %>
-  </div>
-  <div class="col-md-4">
-    <p>answered @</p>
+    <br>
     <% if @ticket.done_at %>
-    <p><%= @ticket.done_at.getlocal.strftime('%I:%M:%S %p') %></p>
+      <%= @ticket.done_at.getlocal.strftime('%I:%M:%S %p') %>
     <% end %>
   </div>
 </div>
-<hr>
+
+
+
+
