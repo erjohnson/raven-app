@@ -2,3 +2,4 @@ $('#raven').removeClass('animated bounceInDown').addClass('animated fadeOutRight
 $('#new_ticket').remove().delay(1000);
 $('#new_ticket_link').show().delay(1000);
 $('#tickets_list').append('<%= j render(@ticket) %>');
+$('#flash-msg').append('<%= j render("layouts/flash") %>');

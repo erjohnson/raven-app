@@ -11,7 +11,7 @@ class TicketsController < ApplicationController
   def create
     @ticket = Ticket.new(ticket_params)
     if @ticket.save
-      flash[:notice] = "Help is on the way!"
+      flash[:notice] = "Ticket saved"
       respond_to do |format|
         format.html { redirect_to tickets_path }
         format.js
