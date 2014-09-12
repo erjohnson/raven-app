@@ -2,7 +2,7 @@
 <br>
 <p><a href="<%= lesson_path(@ticket.lesson) %>"><span class="glyphicon glyphicon-list"></span> &nbsp;<%= @ticket.lesson.name %> (<%= @ticket.lesson.section %>)</a></p>
 <p><a href="<%= user_path(@ticket.user) %>"><span class="glyphicon glyphicon-user"></span> &nbsp;<%= @ticket.user.name %></a></p>
-<%= link_to "Accept", accept_ticket_path, method: "patch", remote: true %>
+
 <br>
 <%= form_for @ticket, action: "update", remote: true do |f| %>
   <%= f.hidden_field :taken, :value => true %>

@@ -35,14 +35,6 @@ class TicketsController < ApplicationController
     end
   end
 
-  def accept
-    @ticket = Ticket.find(params[:id])
-    @ticket.update(ticket_params)
-    respond_to do |format|
-      format.html { redirect_to @ticket }
-    end
-  end
-
 private
 
   def ticket_params
