@@ -1,2 +1,4 @@
-$('#tickets_list').append('<%= j render(@ticket) %>')
-$('#ticket-modal').modal('hide')
+$('#raven').removeClass('animated bounceInDown').addClass('animated fadeOutRight');
+$('#tickets_list').append('<%= j render(@ticket) %>');
+$("#ticket-modal").modal("hide");
+$('#flash-msg').append('<%= j render("layouts/flash") %>');
