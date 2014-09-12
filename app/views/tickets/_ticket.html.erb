@@ -1,8 +1,10 @@
-<div class="panel panel-default">
-  <div class="panel-body">
-    <%= link_to "#{ticket.question}", ticket_url(ticket) %>
-  </div>
-  <div class="panel-footer">
-    asked by <strong><%= ticket.user.name %></strong> at <%= ticket.created_at.getlocal.strftime('%I:%M:%S %p') %>
+<div class="media">
+  <a class="pull-left" href="#">
+    <img class="media-object" src="http://placehold.it/64x64" alt="...">
+  </a>
+  <div class="media-body">
+    <h4 class="media-heading"><%= ticket.user.name %></h4>
+    <p><%= link_to "#{ticket.question}", ticket_url(ticket), class: "lead" %></p>
+    <p class="text-muted"><span class="glyphicon glyphicon-time"></span> <%= ticket.created_at.getlocal.strftime('%I:%M:%S %p') %></p>
   </div>
 </div>
