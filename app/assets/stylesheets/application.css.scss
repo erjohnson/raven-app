@@ -35,6 +35,7 @@ $navbar-default-link-color: #FFFFFF;
 $navbar-default-link-hover-color: #DDDDDD;
 $navbar-border-radius: 0;
 $btn-primary-bg: #3A6073;
+$navbar-default-border: none;
 $thumbnail-border: none;
 $navbar-default-toggle-icon-bar-bg: #FFFFFF;
 $navbar-default-toggle-hover-bg: none;
@@ -42,6 +43,34 @@ $navbar-default-toggle-border-color: none;
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+.sign-up-page {
+  background-color: #16222A;
+  color: #FFFFFF;
+}
+
+.sign-up-page {
+  input[type=text], input[type=email], input[type=password] {
+    background: none;
+    letter-spacing: 0.125em;
+    border: none;
+    border-radius: 0;
+    overflow: auto;
+    outline: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    border-bottom: 1px solid #2CD6BC;
+  }
+
+  .btn-primary {
+    background-color: #2CD6BC;
+  }
+
+  p {
+    letter-spacing: 0.125em;
+  }
+}
 
 a:hover {
   text-decoration: none;
@@ -235,3 +264,4 @@ a:hover {
   width: 100px;
   height: 100px;
 }
+

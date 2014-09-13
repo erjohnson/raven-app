@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="col-sm-8 col-md-8 col-sm-offset-3 col-md-offset-3">
+  <div class="col-sm-10 col-md-offset-1 col-md-8 col-md-offset-2">
         <h4>
           <%= link_to user_path(@ticket.user) do %>
             <%= image_tag @ticket.user.avatar.url(:thumb), class: "profile-avatar", alt: "#{@ticket.user.name} avatar" %> &nbsp;&nbsp;<%= @ticket.user.name %>
@@ -16,12 +16,12 @@
         </blockquote>
     <%= @ticket.created_at.getlocal.strftime('%I:%M:%S %p') %>
     <br>
-    <% if @ticket.taken_at %>
-      <%= @ticket.taken_at.getlocal.strftime('%I:%M:%S %p') %>
+    <% if @ticket.checked_at %>
+      <%= @ticket.checked_at.getlocal.strftime('%I:%M:%S %p') %>
     <% end %>
     <br>
-    <% if @ticket.done_at %>
-      <%= @ticket.done_at.getlocal.strftime('%I:%M:%S %p') %>
+    <% if @ticket.closed_at %>
+      <%= @ticket.closed_at.getlocal.strftime('%I:%M:%S %p') %>
     <% end %>
   </div>
 </div>
