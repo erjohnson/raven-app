@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140912175632) do
+ActiveRecord::Schema.define(version: 20140913192444) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,12 +28,12 @@ ActiveRecord::Schema.define(version: 20140912175632) do
     t.string   "question"
     t.integer  "user_id"
     t.integer  "lesson_id"
-    t.boolean  "taken"
-    t.boolean  "done"
+    t.boolean  "checked"
+    t.boolean  "closed"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.datetime "taken_at"
-    t.datetime "done_at"
+    t.datetime "checked_at"
+    t.datetime "closed_at"
   end
 
   create_table "users", force: true do |t|
