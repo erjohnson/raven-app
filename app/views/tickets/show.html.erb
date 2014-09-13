@@ -11,7 +11,7 @@
           <br>
           <br>
             <%= link_to lesson_path(@ticket.lesson) do %>
-              <span class="glyphicon glyphicon-list"></span> &nbsp;<%= @ticket.lesson.name %> (<%= @ticket.lesson.section %>)
+              <span class="glyphicon glyphicon-list"></span> &nbsp;<%= @ticket.lesson.name %>, <%= @ticket.lesson.section %>
             <% end %>
         </blockquote>
     <%= @ticket.created_at.getlocal.strftime('%I:%M:%S %p') %>
