@@ -1,26 +1,24 @@
 <div class="col-sm-12 col-md-10 col-md-offset-1">
   <h1 class="page-header"><%= @lesson.name %> &nbsp;<small><%= @lesson.section %></small></h1>
   <p class="lead"><%= link_to "View Lesson", @lesson.url %></p>
+  <br>
+  <h2 class="page-header"><span class="glyphicon glyphicon-stats"></span> Stats</h2>
   <div class="row text-center">
     <div class="col-xs-6 col-sm-3">
       <h1><%= @lesson.tickets.count %></h1>
-      <h4>Total Tickets</h4>
-      <span class="text-muted">Something else</span>
+      <span class="text-muted">Total Tickets</span>
     </div>
     <div class="col-xs-6 col-sm-3 placeholder">
       <h1>#</h1>
-      <h4>Average Handle Time</h4>
-      <span class="text-muted">Something else</span>
+      <span class="text-muted">Average Handle Time</span>
     </div>
     <div class="col-xs-6 col-sm-3 placeholder">
       <h1>#</h1>
-      <h4>Average Wait Time</h4>
-      <span class="text-muted">Something else</span>
+      <span class="text-muted">Average Wait Time</span>
     </div>
     <div class="col-xs-6 col-sm-3 placeholder">
       <h1>#</h1>
-      <h4>Rank</h4>
-      <span class="text-muted">Something else</span>
+      <span class="text-muted">Rank</span>
     </div>
   </div>
   <br><br>
