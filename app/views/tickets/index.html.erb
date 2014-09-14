@@ -4,13 +4,21 @@
       <%= link_to "Ask For Help", new_ticket_path, class: "btn btn-lg btn-primary", remote: true %>
   </div>
   <hr>
-    <ul class="nav nav-pills">
-      <li><a href="#">Open</a></li>
-      <li><a href="#">Closed</a></li>
-    </ul>
-  <br>
-  <div id="tickets_list">
-    <%= render @tickets %>
+  <ul class="nav nav-tabs" role="tablist">
+    <li><a href="#open" role="tab" data-toggle="tab">Open</a></li>
+    <li><a href="#answered" role="tab" data-toggle="tab">Closed</a></li>
+  </ul>
+
+  <!-- Tab panes -->
+  <div class="tab-content">
+    <div class="tab-pane active" id="open">
+      <div id="tickets_list">
+        <%= render @tickets %>
+      </div>
+    </div>
+    <div class="tab-pane" id="answered">
+      <%= render @tickets %>
+    </div>
   </div>
 </div>
 <div id="ticket-modal" class="modal fade"></div>

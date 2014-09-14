@@ -5,6 +5,7 @@ class Ticket < ActiveRecord::Base
   validates_presence_of :user_id, :lesson_id, :question
 
   scope :open, -> { where(closed: false) }
+  scope :answered, -> { where(closed: true) }
 
   def take_ticket
     self.update(taken: true, taken_at: Time.new())
