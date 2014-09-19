@@ -44,12 +44,12 @@ $navbar-default-toggle-border-color: none;
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-.sign-up-page {
+.user-form-page {
   background-color: #16222A;
   color: #FFFFFF;
 }
 
-.sign-up-page {
+.user-form-page {
   input[type=text], input[type=email], input[type=password] {
     background: none;
     letter-spacing: 0.125em;
@@ -105,6 +105,7 @@ a:hover {
 .profile-avatar {
   vertical-align: middle;
   border-radius: 50%;
+  margin: 0 auto;
 }
 
 .animated {
